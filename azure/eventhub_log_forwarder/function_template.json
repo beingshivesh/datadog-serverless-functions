@@ -77,7 +77,8 @@
         "name": "Standard_LRS"
       },
       "properties": {
-        "minimumTlsVersion": "TLS1_2"
+        "minimumTlsVersion": "TLS1_2",
+        "allowBlobPublicAccess": false
       }
     },
     {
@@ -90,6 +91,7 @@
         "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
       ],
       "properties": {
+        "httpsOnly": true,
         "name": "[parameters('functionAppName')]",
         "clientAffinityEnabled": false,
         "siteConfig": {
